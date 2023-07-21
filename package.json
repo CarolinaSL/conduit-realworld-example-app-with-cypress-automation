@@ -19,11 +19,17 @@
     "dev": "concurrently --names 'Node,Vite' -c 'green,blue' 'npm run dev -w backend' 'npm run dev -w frontend'",
     "sqlz": "npx -w backend sequelize-cli",
     "start": "npm run build -w frontend && npm run start -w backend",
-    "test": "vitest"
+    "test": "vitest",
+    "open:e2e:prod": "npx cypress open --config-file cypress_prod.config.js",
+    "run:e2e:local": "npx cypress open --config-file cypress_dev.config.js",
+    "run:e2e:prod": "npx cypress run --config-file cypress_prod.config.js"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
     "@vitejs/plugin-react-swc": "^3.2.0",
     "concurrently": "^7.6.0",
+    "cypress": "^12.17.2",
+    "cypress-mochawesome-reporter": "^3.5.1",
     "vitest": "^0.29.7"
   }
 }
